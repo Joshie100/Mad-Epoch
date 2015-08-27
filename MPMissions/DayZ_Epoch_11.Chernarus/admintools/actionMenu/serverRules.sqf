@@ -20,5 +20,5 @@
 <t size='.7' shadow='1'align='left' color='#FFFFFF'></t><br/>
 <t size='1.1' shadow='1'align='left' color='#FFFFFF'>To get admin help ask in side chat or in TeamSpeak</t><br/>
 <t size='.7' shadow='1'align='left' color='#FFFFFF'></t><br/>
-<t size='1.1' shadow='1'align='left' color='#FFFFFF'>Place TeamSpeak IP here</t><br/>
+<t size='1.1' shadow='1'align='left' color='#FFFFFF'>ts3.favik.cz</t><br/>
 "];

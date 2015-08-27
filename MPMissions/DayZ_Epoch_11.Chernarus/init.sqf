@@ -44,6 +44,11 @@ DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 
+DZE_noRotate = []; //Objects that cannot be rotated. Ex: DZE_noRotate = ["ItemVault"] (NOTE: The objects magazine classname)
+DZE_vectorDegrees = [0.01, 0.1, 1, 5, 15, 45, 90];
+DZE_curDegree = 45; //Starting rotation angle. //Prefered any value in array above
+DZE_dirWithDegrees = true; //When rotating objects with Q&E, use the custom degrees
+
 EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
 dayz_fullMoonNights = true;
 
@@ -55,6 +60,7 @@ progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
+call compile preprocessFileLineNumbers "custom\compiles.sqf"
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
 call compile preprocessFileLineNumbers "admintools\config.sqf"; 			// Epoch admin Tools config file

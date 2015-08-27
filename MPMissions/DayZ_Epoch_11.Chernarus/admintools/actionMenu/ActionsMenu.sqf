@@ -90,4 +90,4 @@ TransformAnimalMenu =
 ];
 showCommandingMenu "#USER:ActionMenu";
 
-if(ActionMenuPlayers || ActionMenuAdmins) then {diag_log("Admin Tools: Actions_Menu.sqf loaded");};
+if(ActionMenuPlayers || ActionMenuAdmins) then {diag_log("MAD EPOCH Admin Tools: Actions_Menu.sqf loaded");};

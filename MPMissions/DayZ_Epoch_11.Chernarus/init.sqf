@@ -23,7 +23,7 @@ enableSentences false;
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 
-MaxVehicleLimit = 300; // Default = 50
+MaxVehicleLimit = 500; // Default = 50
 MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 30; // Default = 30 
@@ -33,7 +33,7 @@ dayz_paraSpawn = false;
 dayz_minpos = -1; 
 dayz_maxpos = 16000;
 
-dayz_sellDistance_vehicle = 10;
+dayz_sellDistance_vehicle = 20;
 dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
 
@@ -57,6 +57,8 @@ progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
+call compile preprocessFileLineNumbers "admintools\config.sqf"; 			// Epoch admin Tools config file
+call compile preprocessFileLineNumbers "admintools\variables.sqf"; 			// Epoch admin Tools variables
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
@@ -80,8 +82,11 @@ if (!isDedicated) then {
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	
-	//anti Hack
-	[] execVM "\z\addons\dayz_code\system\antihack.sqf";
+	// Epoch Admin Tools
+if ( !((getPlayerUID player) in AdminList) && !((getPlayerUID player) in ModList)) then 
+{
+  [] execVM "admintools\antihack\antihack.sqf"; // Epoch Antihack with bypass
+};
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
@@ -95,3 +100,4 @@ execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
+[] execVM "admintools\Activate.sqf"; // Epoch admin tools

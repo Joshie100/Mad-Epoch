@@ -154,3 +154,5 @@ class DayZ_loadingScreen
 #include "custom\cfqServerTrader.hpp"
 #include "plotManagement\defines.hpp"
 #include "plotManagement\plotManagement.hpp"
+#include "zupa\advancedTrading\ZSCdefines.hpp"
+#include "zupa\advancedTrading\advancedTrading.hpp"

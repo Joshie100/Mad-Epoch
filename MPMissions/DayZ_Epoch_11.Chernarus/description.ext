@@ -152,3 +152,5 @@ class DayZ_loadingScreen
 #include "admintools\dialog.hpp"
 #include "custom\snap_pro\snappoints.hpp"
 #include "custom\cfqServerTrader.hpp"
+#include "plotManagement\defines.hpp"
+#include "plotManagement\plotManagement.hpp"

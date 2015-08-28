@@ -40,9 +40,17 @@ if(_IsNearPlot == 0) then {
 
 	// diag_log format["DEBUG BUILDING: %1 = %2", dayz_characterID, _ownerID];
 
-	// check if friendly to owner
-	if(dayz_characterID == _ownerID) then {
-		_canBuildOnPlot = true;		
+	_friendlies = _nearestPole getVariable ["plotfriends",[]];
+_fuid  = [];
+{
+      _friendUID = _x select 0;
+      _fuid  =  _fuid  + [_friendUID];
+} forEach _friendlies;
+_builder  = getPlayerUID player;
+// check if friendly to owner
+if(_builder in _fuid) then {
+    _canBuildOnPlot = true;
+};
 	} else {
 		_friendlies		= player getVariable ["friendlyTo",[]];
 		// check if friendly to owner

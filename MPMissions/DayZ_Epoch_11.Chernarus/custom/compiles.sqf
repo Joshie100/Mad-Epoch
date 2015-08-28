@@ -1,4 +1,9 @@
-
+/*Plot*/
+PlotGetFriends      = compile preprocessFileLineNumbers "plotManagement\plotGetFriends.sqf";
+PlotNearbyHumans    = compile preprocessFileLineNumbers "plotManagement\plotNearbyHumans.sqf";
+PlotAddFriend       = compile preprocessFileLineNumbers "plotManagement\plotAddFriend.sqf";
+PlotRemoveFriend    = compile preprocessFileLineNumbers "plotManagement\plotRemoveFriend.sqf";
+/*Plot End*/
 if (!isDedicated) then {
 	player_build = compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
 	snap_build = compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";

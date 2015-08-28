@@ -65,6 +65,7 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";	
 call compile preprocessFileLineNumbers "custom\compiles.sqf"
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
+call compile preprocessFileLineNumbers "logistic\init.sqf
 call compile preprocessFileLineNumbers "admintools\config.sqf"; 			// Epoch admin Tools config file
 call compile preprocessFileLineNumbers "admintools\variables.sqf"; 			// Epoch admin Tools variables
 progressLoadingScreen 1.0;

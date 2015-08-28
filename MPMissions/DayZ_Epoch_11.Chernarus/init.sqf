@@ -99,6 +99,8 @@ if ( !((getPlayerUID player) in AdminList) && !((getPlayerUID player) in ModList
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	
+	// Service Point Rearm+
+    [] execVM "custom\service_point\service_point.sqf";
 };
 
 #include "\z\addons\dayz_code\system\REsec.sqf"

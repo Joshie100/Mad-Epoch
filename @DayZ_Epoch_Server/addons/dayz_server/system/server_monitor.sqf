@@ -224,14 +224,24 @@ if (count _worldspace >= 3) then{
 }; 
 			_object setposATL _pos;
 			_object setDamage _damage;
+			//#########################INDESTRUCTIBLE ITEMS#########################
+			if ((typeOf _object) in indestructible) then {
+				_object addEventHandler ["HandleDamage", {false}];
+				_object enableSimulation false;
+			} else {
+				_object addMPEventHandler ["MPKilled",{_this call object_handleServerKilled;}];
+			};
+			//######################################################################
 			
 			if ((typeOf _object) in dayz_allowedObjects) then {
 				_object setVariable["memDir",_dir,true];
-				if (DZE_GodModeBase) then {
-					_object addEventHandler ["HandleDamage", {false}];
-				} else {
-					_object addMPEventHandler ["MPKilled",{_this call object_handleServerKilled;}];
-				};
+				//#########################REMOVED FOR INDESTRUCTIBLE ITEMS#########################
+//				if (DZE_GodModeBase) then {
+//					_object addEventHandler ["HandleDamage", {false}];
+//				} else {
+//					_object addMPEventHandler ["MPKilled",{_this call object_handleServerKilled;}];
+//				};
+				//##################################################################################
 				// Test disabling simulation server side on buildables only.
 				_object enableSimulation false;
 				// used for inplace upgrades && lock/unlock of safe

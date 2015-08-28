@@ -247,6 +247,14 @@ if (_hasrequireditem) then {
 	};
 
 	_object = createVehicle [_classname, _location, [], 0, "CAN_COLLIDE"];
+	
+	//#########################INDESTRUCTIBLE ITEMS#########################
+		if ((typeOf _tmpbuilt) in indestructible) then {
+			_object addEventHandler ["HandleDamage", {false}];
+			_object enableSimulation false;
+		};
+	//######################################################################
+	
 	//Build gizmo
 	_objectHelper = "Sign_sphere10cm_EP1" createVehicle _location;
 	_helperColor = "#(argb,8,8,3)color(0,0,0,0,ca)";

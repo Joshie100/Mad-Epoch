@@ -1,0 +1,3 @@
+//#########################INDESTRUCTIBLE ITEMS#########################
+indestructible = ["CinderWallHalf_DZ","CinderWall_DZ","CinderWallSmallDoorway_DZ","CinderWallDoorSmall_DZ","CinderWallDoorSmallLocked_DZ","CinderWallDoorway_DZ","CinderWallDoor_DZ","CinderWallDoorLocked_DZ","MetalFloor_DZ","WoodLadder_DZ","WoodStairs_DZ","WoodStairsSans_DZ","WoodStairsRails_DZ","WoodRamp_DZ"];
+//######################################################################

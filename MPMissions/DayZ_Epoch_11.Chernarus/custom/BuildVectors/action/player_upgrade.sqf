@@ -146,6 +146,12 @@ if ((count _upgrade) > 0) then {
 			
 			// Create new object 
 			_object = createVehicle [_classname, [0,0,0], [], 0, "CAN_COLLIDE"];
+			//#########################INDESTRUCTIBLE ITEMS#########################
+			if ((typeOf _object) in indestructible) then {
+				_object addEventHandler ["HandleDamage", {false}];
+				_object enableSimulation false;
+			};
+			//######################################################################
 
 			// Set direction
 			_object setDir _dir;

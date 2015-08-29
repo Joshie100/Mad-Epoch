@@ -455,6 +455,9 @@ _object setVariable ["plotfriends", _intentory, true];
 		endLoadingScreen;
 	};
 
+	[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
+	[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
+	[] ExecVM "\z\addons\dayz_server\EMS\DZMSInit.sqf";
 	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";
